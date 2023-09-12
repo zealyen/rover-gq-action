@@ -20,6 +20,7 @@ jobs:
       - name: Retrieve runner uid and gid
         id: uid-gid
         run: |
+          ls -al
           echo "uid=$(id -u)" >> $GITHUB_OUTPUT
           echo "gid=$(id -g)" >> $GITHUB_OUTPUT
       - name: Test the action
