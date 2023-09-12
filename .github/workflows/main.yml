@@ -2,10 +2,10 @@ name: Build & Test & Upload Docker Image
 
 on:
     push:
-      branches: [ rover ]
+        branches: [ main ]
 
 env:
-  DOCKERHUB_IMAGE: zealyen0526/rover-gq-action:latest
+    DOCKERHUB_IMAGE: zealyen0526/rover-gq-action:latest
 
 jobs:
   build:
