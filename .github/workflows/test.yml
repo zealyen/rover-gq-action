@@ -5,18 +5,12 @@ on: [push]
 jobs:
   test:
     runs-on: ubuntu-latest
+    name: test action
     steps:
-      - name: Retrieve runner uid and gid
-        id: uid-gid
-        run: |
-          echo "uid=$(id -u)" >> $GITHUB_OUTPUT
-          echo "gid=$(id -g)" >> $GITHUB_OUTPUT
-      - name: test action
+      - name: action step
         uses: zealyen/rover-gq-action@v1
-        env:
-          UID: ${{ steps.uid-gid.outputs.uid }}
-          GID: ${{ steps.uid-gid.outputs.gid }}
         with:
-          apollo_key:  ${{ secrets.APOLLO_KEY }}
+          apollo_key: ${{ secrets.APOLLO_KEY }}
           apollo_graph_ref: ionex-core-web-xot5x@test
-     
+          schema_path: test.graphql
+      
