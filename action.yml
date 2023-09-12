@@ -1,0 +1,19 @@
+name: GitHub Actions Rover Graphql
+author: Zeal Yen <sojoasd@gmail.com>
+description: check and push schema
+branding:
+  icon: lock
+  color: gray-dark
+inputs:
+  apollo_key:
+    description: "ex: service:******:*******HcBw"
+    required: true
+  apollo_graph_ref:
+    description: "include variant, ex: xxxx-xot5x@dev, variant is dev"
+    required: true
+  schema_path:
+    description: "relative path, ex: ./xxx.graphql"
+    required: true
+runs:
+  using: "docker"
+  image: "docker://zealyen0526/rover-gq-action:latest"

@@ -1,0 +1,6 @@
+services:
+  app:
+    image: rover-gq-action:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
