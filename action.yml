@@ -17,3 +17,7 @@ inputs:
 runs:
   using: "docker"
   image: "docker://zealyen0526/rover-gq-action:latest"
+  args:
+    - ${{ inputs.apollo_key }}
+    - ${{ inputs.apollo_graph_ref }}
+    - ${{ inputs.schema_path }}
